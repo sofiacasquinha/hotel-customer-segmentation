@@ -8,13 +8,7 @@ The analysis follows the CRISP-DM methodology and uses customer recency, revenue
 
 The hotel’s existing segmentation was based mainly on booking origin and did not capture meaningful differences in customer behaviour.
 
-This project aims to identify customer groups that can support:
-
-- customer retention;
-- re-engagement campaigns;
-- loyalty initiatives;
-- channel prioritisation;
-- differentiated marketing actions.
+This project aims to identify customer groups that can support in marketing and managerial decisions.
 
 ## Dataset
 
@@ -32,9 +26,6 @@ The original dataset contains:
 - market segment;
 - special requests.
 
-Dataset reference:
-
-Nuno António, 2022, Revision 1.0.
 
 ## Data Preparation
 
@@ -121,102 +112,3 @@ These customers had been inactive for the longest period and are more suitable f
 - The hotel’s existing origin-based segmentation provided limited differentiation between most behavioural groups.
 - Portuguese customers were more represented in the Dormant segment and less represented in the High-Value Loyal segment.
 - The engineered `Tenure` variable helped identify the commercially important High-Value Loyal group.
-
-## Repository Structure
-
-```text
-hotel-customer-segmentation/
-│
-├── data/
-│   ├── HotelCustomersDataset.tsv
-│   └── processed/
-│       ├── X_model.csv
-│       ├── X_unscaled.csv
-│       ├── df_profile.csv
-│       ├── minmax_scaler.pkl
-│       └── model_features.pkl
-│
-├── notebooks/
-│   ├── 01_business_data_understanding.ipynb
-│   ├── 02_data_preparation.ipynb
-│   ├── 03_modeling.ipynb
-│   └── 04_evaluation_deployment.ipynb
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
-
-## Running the Project
-
-Clone the repository:
-
-```bash
-git clone <repository-url>
-cd hotel-customer-segmentation
-```
-
-Create and activate a virtual environment:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-On Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-Install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start JupyterLab:
-
-```bash
-jupyter lab
-```
-
-Run the notebooks in this order:
-
-1. `01_business_data_understanding.ipynb`
-2. `02_data_preparation.ipynb`
-3. `03_modeling.ipynb`
-4. `04_evaluation_deployment.ipynb`
-
-## Technologies
-
-- Python
-- pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- scikit-learn
-- SciPy
-- joblib
-- JupyterLab
-
-## Limitations
-
-- Hierarchical clustering was performed on one 2,000-customer sample.
-- The three largest segments are separated mainly by recency.
-- Most customers have only one recorded checked-in booking.
-- Transaction-level data could provide stronger behavioural differentiation.
-- The deployment section presents a proposed implementation rather than a production system.
-
-## Future Improvements
-
-- validate the segmentation on newer customer data;
-- test multiple hierarchical-clustering samples;
-- incorporate transaction-level and campaign-response data;
-- monitor segment size and profile changes over time;
-- export the final segmentation table for CRM use;
-- save the fitted K-Means model for scoring new customers.
-
-## License
-
-Add a licence file before publishing if you want to define how others may reuse the project.
